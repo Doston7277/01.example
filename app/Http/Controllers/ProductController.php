@@ -67,14 +67,7 @@ class ProductController extends Controller
             $extension = $file -> getClientOriginalExtension();
             $fileName = time() . '.' . $extension;
             $file->move('uploads/product', $fileName);
-
-            $product->title = $request->get('title');
-            $product->price = $request->get('price');
-            $product->description = $request->get('description');
             $product->image = $fileName;
-    
-            $product->save();
-
         }
         
         $product->title = $request->get('title');
